@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3035",
+    "package-update": "yarn upgrade-interactive --latest",
     "build": "next build",
     "start": "next start",
     "lint": "run-p -l -c --aggregate-output lint:*",
@@ -14,8 +15,7 @@
     "fix:eslint": "yarn lint:eslint --fix",
     "fix:prettier": "yarn lint:prettier --write",
     "check-types": "tsc --noEmit",
-    "prepare": "husky install",
-    "package-update": "yarn upgrade-interactive --latest"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.5",
@@ -27,10 +27,10 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@types/react": "17.0.15",
-    "@typescript-eslint/eslint-plugin": "^4.28.4",
-    "@typescript-eslint/parser": "^4.28.4",
-    "eslint": "7.31.0",
+    "@types/react": "17.0.16",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "eslint": "7.32.0",
     "eslint-config-next": "^11.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
@@ -39,8 +39,8 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "husky": "^7.0.0",
-    "lint-staged": "^11.1.1",
-    "msw": "^0.33.0",
+    "lint-staged": "^11.1.2",
+    "msw": "^0.34.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.2",
     "typescript": "4.3.5"
