@@ -1,25 +1,17 @@
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
-    ecmaFeatures: { jsx: true },
-  },
-  settings: { react: { version: 'detect' } },
-  env: { es2021: true, browser: true, jest: true, node: true },
-  plugins: ['@typescript-eslint', 'import', 'simple-import-sort'],
+  plugins: ['simple-import-sort'],
   extends: [
     'eslint:recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
-    'next',
     'next/core-web-vitals',
     'prettier',
   ],
+  parserOptions: {
+    project: './tsconfig.json',
+  },
   rules: {
     'no-var-requires': 'off',
     // 単なるconsole.logはエラーにする
@@ -64,7 +56,7 @@ module.exports = {
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
     // 明示的なanyは許容する
-    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-expslicit-any': 'off',
     // 関数の引数や返り値に必ず型をつけるルールを off にする
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     // 型は明示的にtype-importする
@@ -90,7 +82,7 @@ module.exports = {
     // pages配下とsbファイルのみdefault-exportを許容
     {
       files: ['src/pages/**/*.tsx', 'src/pages/**/*.ts', 'src/**/*.stories.@(js|jsx|ts|tsx)'],
-      rules: { 'import/no-default-export': 'off' },
+      rules: { 'import/no-default-export': 'off', 'react/display-name': 'off' },
     },
     // themeのセッティングでコンポーネント名のPascalCaseを許容
     {
